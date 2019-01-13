@@ -1,7 +1,14 @@
+/**
+ * This server provides a REST API
+ * Only the GET operation is enable : this operation send a GET HTTP request to the TTN Integration Storage and except an array of objects
+ * containing data from TTN
+ */
+
 var express = require("express");
 var app = express();
 const request = require('request');
 
+// set accesses
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
@@ -33,3 +40,5 @@ const port = 3000;
 app.listen(port, () => {
     console.log("Server running on port %d",port)
 });
+
+console.log("end");
