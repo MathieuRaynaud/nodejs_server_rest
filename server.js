@@ -73,8 +73,8 @@ function addSensorData(name, data) {
     let json = JSON.parse(file);
     for (let i=0; i<json.length; i++) {
         if (json[i].name === name) {
-            console.log(json[i].serie.data);
             json[i].serie.data.push(data);
+            console.log(json[i].serie.data);
             console.log("Data added to %s", json[i].name);
         }
     }
